@@ -1,13 +1,14 @@
 import React from 'react';
-import {View, SafeAreaView} from 'react-native';
-import StartView from './src/views/startView.js';
+import {Provider} from 'react-redux';
+import RootNav from './src/navigations';
+import {store} from './src/store/store.js';
 
 class App extends React.Component {
   render() {
     return (
-      <SafeAreaView>
-        <StartView />
-      </SafeAreaView>
+      <Provider store={store}>
+        <RootNav />
+      </Provider>
     );
   }
 }
