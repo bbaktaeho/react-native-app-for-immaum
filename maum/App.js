@@ -1,4 +1,4 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import SplashScreen from 'react-native-splash-screen';
 
 import {store} from './src/store/store';

@@ -79,12 +79,16 @@ export default props => {
       <View testID="Beautiful" style={styles.slide}>
         <View style={styles.imageView}>
           {Platform.OS === 'ios' && (
-            <TouchableOpacity style={styles.iosSkip}>
+            <TouchableOpacity
+              style={styles.iosSkip}
+              onPress={() => dispatch(appStart())}>
               <Text style={styles.skipText}>SKIP</Text>
             </TouchableOpacity>
           )}
           {Platform.OS === 'android' && (
-            <TouchableOpacity style={styles.andSkip}>
+            <TouchableOpacity
+              style={styles.andSkip}
+              onPress={() => dispatch(appStart())}>
               <Text style={styles.skipText}>SKIP</Text>
             </TouchableOpacity>
           )}
@@ -98,12 +102,16 @@ export default props => {
       <View testID="Simple" style={styles.slide}>
         <View style={styles.imageView}>
           {Platform.OS === 'ios' && (
-            <TouchableOpacity style={styles.iosSkip}>
+            <TouchableOpacity
+              style={styles.iosSkip}
+              onPress={() => dispatch(appStart())}>
               <Text style={styles.skipText}>SKIP</Text>
             </TouchableOpacity>
           )}
           {Platform.OS === 'android' && (
-            <TouchableOpacity style={styles.andSkip}>
+            <TouchableOpacity
+              style={styles.andSkip}
+              onPress={() => dispatch(appStart())}>
               <Text style={styles.skipText}>SKIP</Text>
             </TouchableOpacity>
           )}
@@ -117,12 +125,16 @@ export default props => {
       <View testID="Simple" style={styles.slide}>
         <View style={styles.imageView}>
           {Platform.OS === 'ios' && (
-            <TouchableOpacity style={styles.iosSkip}>
+            <TouchableOpacity
+              style={styles.iosSkip}
+              onPress={() => dispatch(appStart())}>
               <Text style={styles.skipText}>SKIP</Text>
             </TouchableOpacity>
           )}
           {Platform.OS === 'android' && (
-            <TouchableOpacity style={styles.andSkip}>
+            <TouchableOpacity
+              style={styles.andSkip}
+              onPress={() => dispatch(appStart())}>
               <Text style={styles.skipText}>SKIP</Text>
             </TouchableOpacity>
           )}
@@ -136,12 +148,16 @@ export default props => {
       <View testID="Simple" style={styles.slide}>
         <View style={styles.imageView}>
           {Platform.OS === 'ios' && (
-            <TouchableOpacity style={styles.iosSkip}>
+            <TouchableOpacity
+              style={styles.iosSkip}
+              onPress={() => dispatch(appStart())}>
               <Text style={styles.skipText}>SKIP</Text>
             </TouchableOpacity>
           )}
           {Platform.OS === 'android' && (
-            <TouchableOpacity style={styles.andSkip}>
+            <TouchableOpacity
+              style={styles.andSkip}
+              onPress={() => dispatch(appStart())}>
               <Text style={styles.skipText}>SKIP</Text>
             </TouchableOpacity>
           )}
@@ -156,7 +172,7 @@ export default props => {
         <Text style={{color: '#fff', fontSize: 30, fontWeight: 'bold'}}>
           밥주러 갑시다!
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => dispatch(appStart())}>
           <Text>시작하기</Text>
         </TouchableOpacity>
       </View>
