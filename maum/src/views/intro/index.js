@@ -49,7 +49,7 @@ var styles = {
 };
 
 export default () => (
-  <Swiper style={styles.wrapper} showsButtons loop={false}>
+  <Swiper style={styles.wrapper} showsButtons autoplay={true} loop={false}>
     <View testID="Hello" style={styles.slide}>
       <View style={styles.imageView}>
         {Platform.OS === 'ios' && (
@@ -131,12 +131,12 @@ export default () => (
       <View style={styles.imageView}>
         {Platform.OS === 'ios' && (
           <TouchableOpacity style={styles.iosSkip}>
-            <Text style={styles.skipText}>시작하기</Text>
+            <Text style={styles.skipText}>SKIP</Text>
           </TouchableOpacity>
         )}
         {Platform.OS === 'android' && (
           <TouchableOpacity style={styles.andSkip}>
-            <Text style={styles.skipText}>시작하기</Text>
+            <Text style={styles.skipText}>SKIP</Text>
           </TouchableOpacity>
         )}
         <Image
@@ -145,6 +145,14 @@ export default () => (
         />
       </View>
       <Text style={styles.text}>마음이 갤러리!</Text>
+    </View>
+    <View testID="Simple" style={styles.slide}>
+      <Text style={{color: '#fff', fontSize: 30, fontWeight: 'bold'}}>
+        밥주러 갑시다!
+      </Text>
+      <TouchableOpacity>
+        <Text>시작하기</Text>
+      </TouchableOpacity>
     </View>
   </Swiper>
 );
