@@ -1,23 +1,23 @@
 import React, {useEffect} from 'react';
-import {
-  SafeAreaView,
-  StyleSheet,
-  ScrollView,
-  View,
-  Text,
-  StatusBar,
-} from 'react-native';
-
 import SplashScreen from 'react-native-splash-screen';
-import Intro from './src/views/intro';
 
-const App: () => React$Node = () => {
-  useEffect(() => {
+import {store} from './src/store/store';
+import Start from './src/views/Start';
+import {Provider} from 'react-redux';
+
+class App extends React.Component {
+  componentDidMount() {
     setTimeout(() => {
       SplashScreen.hide();
     }, 2000);
-  }, []);
-  return <Intro />;
-};
+  }
+  render() {
+    return (
+      <Provider store={store}>
+        <Start />
+      </Provider>
+    );
+  }
+}
 
 export default App;
