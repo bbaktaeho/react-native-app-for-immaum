@@ -5,6 +5,9 @@ import {store} from './src/store/store';
 import Start from './src/views/Start';
 import {Provider} from 'react-redux';
 
+import Icon from 'react-native-vector-icons/MaterialIcons';
+Icon.loadFont();
+
 class App extends React.Component {
   componentDidMount() {
     setTimeout(() => {

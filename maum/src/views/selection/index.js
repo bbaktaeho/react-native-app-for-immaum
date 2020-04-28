@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, SafeAreaView, Text} from 'react-native';
 
-// import {CheckBox, Image} from 'react-native-elements';
+import {CheckBox, Image} from 'react-native-elements';
 
 export default class Selection extends React.Component {
   state = {
@@ -10,8 +10,7 @@ export default class Selection extends React.Component {
   render() {
     return (
       <SafeAreaView>
-        <Text>gdgdg</Text>
-        {/* <CheckBox center title="Click Here" checked={this.state.checked} />
+        <CheckBox center title="Click Here" checked={this.state.checked} />
 
         <CheckBox
           center
@@ -41,7 +40,7 @@ export default class Selection extends React.Component {
           }
           checked={this.state.checked}
           onPress={() => this.setState({checked: !this.state.checked})}
-        /> */}
+        />
       </SafeAreaView>
     );
   }
