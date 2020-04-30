@@ -35,7 +35,7 @@ export default () => {
       />
       <Draw.Screen
         name="Setting"
-        component={Gallary}
+        component={Setting}
         options={{drawerLabel: '설정'}}
       />
     </Draw.Navigator>
