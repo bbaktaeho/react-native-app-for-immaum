@@ -1,11 +1,16 @@
 import React from 'react';
 import {Text, SafeAreaView} from 'react-native';
+import Header from '../../components/Header';
 
-const Chat = props => {
+const Chat = ({navigation}) => {
   return (
-    <SafeAreaView>
-      <Text>채팅</Text>
-    </SafeAreaView>
+    <>
+      <Header navigation={navigation} />
+
+      <SafeAreaView>
+        <Text>채팅</Text>
+      </SafeAreaView>
+    </>
   );
 };
 

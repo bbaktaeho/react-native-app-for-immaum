@@ -1,11 +1,15 @@
 import React from 'react';
 import {Text, SafeAreaView} from 'react-native';
+import Header from '../../components/Header';
 
-const Home = props => {
+const Home = ({navigation}) => {
   return (
-    <SafeAreaView>
-      <Text>홈</Text>
-    </SafeAreaView>
+    <>
+      <Header navigation={navigation} />
+      <SafeAreaView>
+        <Text>홈</Text>
+      </SafeAreaView>
+    </>
   );
 };
 

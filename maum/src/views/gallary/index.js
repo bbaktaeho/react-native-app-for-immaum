@@ -1,11 +1,16 @@
 import React from 'react';
 import {Text, SafeAreaView} from 'react-native';
+import Header from '../../components/Header';
 
-const Gallary = props => {
+const Gallary = ({navigation}) => {
   return (
-    <SafeAreaView>
-      <Text>갤러리</Text>
-    </SafeAreaView>
+    <>
+      <Header navigation={navigation} />
+
+      <SafeAreaView>
+        <Text>갤러리</Text>
+      </SafeAreaView>
+    </>
   );
 };
 

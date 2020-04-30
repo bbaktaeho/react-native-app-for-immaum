@@ -1,11 +1,16 @@
 import React from 'react';
 import {Text, SafeAreaView} from 'react-native';
+import Header from '../../components/Header';
 
-const Statistics = props => {
+const Statistics = ({navigation}) => {
   return (
-    <SafeAreaView>
-      <Text>통계</Text>
-    </SafeAreaView>
+    <>
+      <Header navigation={navigation} />
+
+      <SafeAreaView>
+        <Text>통계</Text>
+      </SafeAreaView>
+    </>
   );
 };
 

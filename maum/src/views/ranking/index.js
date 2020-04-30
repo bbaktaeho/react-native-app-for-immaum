@@ -1,11 +1,16 @@
 import React from 'react';
 import {Text, SafeAreaView} from 'react-native';
+import Header from '../../components/Header';
 
-const Ranking = props => {
+const Ranking = ({navigation}) => {
   return (
-    <SafeAreaView>
-      <Text>순위</Text>
-    </SafeAreaView>
+    <>
+      <Header navigation={navigation} />
+
+      <SafeAreaView>
+        <Text>순위</Text>
+      </SafeAreaView>
+    </>
   );
 };
 
