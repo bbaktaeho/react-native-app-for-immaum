@@ -1,6 +1,7 @@
 import React from 'react';
 import {Text, SafeAreaView} from 'react-native';
 import {GiftedChat} from 'react-native-gifted-chat';
+import MyHeader from '../../components/MyHeader';
 
 class Chat extends React.Component {
   state = {
@@ -31,14 +32,19 @@ class Chat extends React.Component {
   }
 
   render() {
+    const {navigation} = this.props;
     return (
-      <GiftedChat
-        messages={this.state.messages}
-        onSend={messages => this.onSend(messages)}
-        user={{
-          _id: 1,
-        }}
-      />
+      <>
+        <MyHeader navigation={navigation} title="채팅" />
+
+        <GiftedChat
+          messages={this.state.messages}
+          onSend={messages => this.onSend(messages)}
+          user={{
+            _id: 1,
+          }}
+        />
+      </>
     );
   }
 }

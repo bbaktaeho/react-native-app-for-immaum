@@ -1,8 +1,10 @@
 import React, {Component} from 'react';
 import {StyleSheet, SafeAreaView, Text, View, Image} from 'react-native';
-import ButtonMain from '../../components/ButtonMain';
+import MyButton from '../../components/MyButton';
+import MyHeader from '../../components/MyHeader';
 import MyAlert from '../../components/MyAlert';
 const moon = require('../../../assets/images/moon.png');
+
 class Home extends Component {
   _onSelect(title, type) {
     let payload;
@@ -31,18 +33,20 @@ class Home extends Component {
     console.log(data);
   };
   render() {
+    const {navigation} = this.props;
     return (
       <>
+        <MyHeader navigation={navigation} title="홈" />
         <SafeAreaView style={styles.buttonContainer}>
           <View style={styles.buttonView}>
-            <ButtonMain
+            <MyButton
               text="아침"
               color="green"
               onPress={() => this._onSelect('아침', 'success')}
             />
           </View>
           <View style={styles.buttonView}>
-            <ButtonMain
+            <MyButton
               text="저녁"
               color="#5858FA"
               onPress={() => this._onSelect('저녁', 'custom')}
@@ -72,12 +76,12 @@ const styles = StyleSheet.create({
 //   return (
 //     <SafeAreaView
 //       style={{flex: 1, justifyContent: 'center', alignItems: 'center'}}>
-//       <ButtonMain
+//       <MyButton
 //         icon="check"
 //         text="아침"
 //         onPress={() => navigation.setOptions({title: '홈'})}
 //       />
-//       <ButtonMain icon="check" text="저녁" />
+//       <MyButton icon="check" text="저녁" />
 //     </SafeAreaView>
 //   );
 // };
