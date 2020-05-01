@@ -1,8 +1,9 @@
-import {SKIP_INTRO, SKIP_SELECTION} from './actionTypes';
+import {SKIP_INTRO, SKIP_SELECTION, NAVIGATION} from './actionTypes';
 
 const initialState = {
   isSkip: false,
   isSelection: false,
+  navigation: null,
 };
 
 export const mainReducer = (state = initialState, action) => {
@@ -11,6 +12,7 @@ export const mainReducer = (state = initialState, action) => {
       return {...state, isSkip: true};
     case SKIP_SELECTION:
       return {...state, isSelection: true};
+    // case NAVIGATION:
     default:
       return state;
   }

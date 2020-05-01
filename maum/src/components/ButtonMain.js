@@ -13,13 +13,17 @@ const styles = StyleSheet.create({
   },
 });
 
-const ButtonMain = ({icon = '', text}) => {
+const ButtonMain = ({icon = '', text, onPress}) => {
+  const item = {
+    type: text,
+  };
   return (
     <Button
       icon={<CheckIcon />}
       title={text}
       buttonStyle={styles.button}
       iconRight={true}
+      onPress={() => onPress({item})}
     />
   );
 };

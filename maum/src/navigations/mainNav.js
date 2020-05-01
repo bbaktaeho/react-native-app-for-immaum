@@ -9,35 +9,15 @@ import Gallary from '../views/gallary';
 import Setting from '../views/setting';
 
 const Draw = createDrawerNavigator();
-export default () => {
+export default ({}) => {
   return (
     <Draw.Navigator initialRouteName="Home">
-      <Draw.Screen name="Home" component={Home} options={{drawerLabel: '홈'}} />
-      <Draw.Screen
-        name="Chat"
-        component={Chat}
-        options={{drawerLabel: '채팅'}}
-      />
-      <Draw.Screen
-        name="Ranking"
-        component={Ranking}
-        options={{drawerLabel: '랭킹'}}
-      />
-      <Draw.Screen
-        name="Statistics"
-        component={Statistics}
-        options={{drawerLabel: '통계'}}
-      />
-      <Draw.Screen
-        name="Gallary"
-        component={Gallary}
-        options={{drawerLabel: '앨범'}}
-      />
-      <Draw.Screen
-        name="Setting"
-        component={Setting}
-        options={{drawerLabel: '설정'}}
-      />
+      <Draw.Screen name="홈" component={Home} />
+      <Draw.Screen name="채팅" component={Chat} />
+      <Draw.Screen name="랭킹" component={Ranking} />
+      <Draw.Screen name="통계" component={Statistics} />
+      <Draw.Screen name="앨범" component={Gallary} />
+      <Draw.Screen name="설정" component={Setting} />
     </Draw.Navigator>
   );
 };

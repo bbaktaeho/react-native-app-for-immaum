@@ -1,4 +1,5 @@
 import React from 'react';
+import {Dimensions} from 'react-native';
 import {Header} from 'react-native-elements';
 import LeftIcon from './IconMenu';
 
