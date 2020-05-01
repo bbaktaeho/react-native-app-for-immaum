@@ -1,29 +1,22 @@
 import React, {Component} from 'react';
-import {StyleSheet, SafeAreaView, Text, View} from 'react-native';
-import DropdownAlert from 'react-native-dropdownalert';
-import {PURPLE_COLOR, WHITE_COLOR, ITEMS, ReactNativeLogo} from './constants';
-import List from './List';
+import {StyleSheet, SafeAreaView, Text, View, Image} from 'react-native';
 import ButtonMain from '../../components/ButtonMain';
-
+import MyAlert from '../../components/MyAlert';
+const moon = require('../../../assets/images/moon.png');
 class Home extends Component {
-  _onSelect({item, index}) {
-    switch (item.type) {
-      case 'close':
-        this._onProgrammaticClose();
-        break;
-      default:
-        const title = `${item.type} `;
-        const payload = '';
-        const interval = 1500;
-        // local image source
-        this.dropDownAlertRef.alertWithType(
-          item.type,
-          title,
-          item.message,
-          payload,
-          interval,
-        );
+  _onSelect(title, type) {
+    let payload;
+    if (title === '저녁') {
+      payload = {message: 'moon', source: moon};
     }
+    const interval = 1500;
+    this.dropDownAlertRef.alertWithType(
+      type,
+      title,
+      '성공적으로 등록 되었습니다!',
+      payload,
+      interval,
+    );
   }
   _onProgrammaticClose = () => {
     this.dropDownAlertRef.closeAction();
@@ -41,37 +34,34 @@ class Home extends Component {
     return (
       <>
         <SafeAreaView style={styles.buttonContainer}>
-          <ButtonMain
-            text="아침"
-            onPress={({item, index}) => this._onSelect({item, index})}
-          />
-          <ButtonMain
-            text="저녁"
-            onPress={({item, index}) => this._onSelect({item, index})}
-          />
+          <View style={styles.buttonView}>
+            <ButtonMain
+              text="아침"
+              color="green"
+              onPress={() => this._onSelect('아침', 'success')}
+            />
+          </View>
+          <View style={styles.buttonView}>
+            <ButtonMain
+              text="저녁"
+              color="#5858FA"
+              onPress={() => this._onSelect('저녁', 'custom')}
+            />
+          </View>
         </SafeAreaView>
-        <DropdownAlert
-          ref={ref => (this.dropDownAlertRef = ref)}
-          containerStyle={{
-            backgroundColor: PURPLE_COLOR,
-          }}
-          // showCancel={true}
-          // onCancel={this._onCancel}
-          onTap={this._onTap}
-          titleNumOfLines={2}
-          messageNumOfLines={0}
-        />
+        <MyAlert compo={this} />
       </>
     );
   }
 }
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: WHITE_COLOR,
-  },
   buttonContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  buttonView: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',

@@ -7,13 +7,12 @@ import CheckIcon from '../components/icons/Chcek';
 
 const styles = StyleSheet.create({
   button: {
-    backgroundColor: 'black',
     width: 200,
     borderRadius: 20,
   },
 });
 
-const ButtonMain = ({icon = '', text, onPress}) => {
+const ButtonMain = ({icon = '', text, onPress, color}) => {
   const item = {
     type: text,
   };
@@ -21,7 +20,7 @@ const ButtonMain = ({icon = '', text, onPress}) => {
     <Button
       icon={<CheckIcon />}
       title={text}
-      buttonStyle={styles.button}
+      buttonStyle={[styles.button, {backgroundColor: color}]}
       iconRight={true}
       onPress={() => onPress({item})}
     />
