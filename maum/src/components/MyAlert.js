@@ -12,6 +12,8 @@ const MyAlert = ({compo}) => {
         backgroundColor: '#8181F7',
       }}
       // showCancel={true}
+      translucent={true}
+      updateStatusBar={false}
       titleNumOfLines={2}
       messageNumOfLines={0}
       ref={ref => (compo.dropDownAlertRef = ref)}

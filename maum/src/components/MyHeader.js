@@ -4,13 +4,12 @@ import {Header} from 'react-native-elements';
 import {LeftIcon, RightIcon} from './IconMenu';
 
 const screenHeight = Math.round(Dimensions.get('window').height);
-let headerHeight = screenHeight / 8;
 
 const styles = StyleSheet.create({
   header: {
     borderBottomEndRadius: 20,
     borderBottomLeftRadius: 20,
-    height: headerHeight,
+    height: Platform.OS === 'android' ? screenHeight / 9 : screenHeight / 8,
     backgroundColor: '#8D8A8A',
   },
 });
