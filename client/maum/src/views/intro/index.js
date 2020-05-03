@@ -1,8 +1,7 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import Swiper from 'react-native-swiper';
 import {useDispatch} from 'react-redux';
-import {appStart} from '../../store/actions';
 import SkipButton from '../../components/intro/skipButton';
 import StartButton from '../../components/intro/startButton';
 

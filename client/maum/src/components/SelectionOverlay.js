@@ -1,8 +1,11 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState} from 'react';
 import {View, StyleSheet} from 'react-native';
 import {Button, Overlay, Text, Input} from 'react-native-elements';
 import LockIcon from './icons/Lock';
 import MaumFetch from '../utils/Fetch';
+import {useDispatch} from 'react-redux';
+import {isSelection} from '../store/actions';
+
 import {URL} from '../configs/netConfig';
 
 const styles = StyleSheet.create({
@@ -19,15 +22,18 @@ const styles = StyleSheet.create({
 
 export default ({name, isVisible, onBackdropPress}) => {
   let [code, setCode] = useState('');
-
+  let [errMsg, setErrMsg] = useState('');
+  const dispatch = useDispatch();
   const Fetch = async body => {
-    await MaumFetch({url: URL.auth_register, method: 'POST', body})
-      .then(res => {
-        console.log(res);
-      })
-      .catch(err => {
-        console.log(err);
-      });
+    try {
+      const res = await MaumFetch(URL.auth_register, 'POST', body);
+      if (res.success) {
+        isVisible = true;
+        dispatch(isSelection());
+      } else setErrMsg(res.message);
+    } catch (FetchErr) {
+      setErrMsg(FetchErr);
+    }
   };
 
   return (
@@ -40,6 +46,7 @@ export default ({name, isVisible, onBackdropPress}) => {
           secureTextEntry={true}
           value={code}
           onChangeText={value => setCode(value)}
+          errorMessage={errMsg}
         />
         <Button
           containerStyle={styles.button}
