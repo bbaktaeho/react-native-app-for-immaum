@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "241523459077",
+    "firebase_url": "https://maum-b3629.firebaseio.com",
+    "project_id": "maum-b3629",
+    "storage_bucket": "maum-b3629.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:241523459077:android:bce9091a1052b77ee5886c",
+        "android_client_info": {
+          "package_name": "com.maum"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "241523459077-dfb5aa4enf000vpv5iicd645mombpo50.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyABSDeGO9NcVis7gcjzC-Yb42oj8uFuMTY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "241523459077-dfb5aa4enf000vpv5iicd645mombpo50.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
