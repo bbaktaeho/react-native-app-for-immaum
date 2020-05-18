@@ -6,7 +6,7 @@ import { dbType } from './index';
 class User extends Model {
     readonly id!: number;
     name!: string;
-    phone!: string;
+    phone?: string;
 }
 
 User.init(
