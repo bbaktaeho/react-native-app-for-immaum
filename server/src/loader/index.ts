@@ -14,7 +14,7 @@ const loader = async ({ app }: { app: Application }) => {
             .catch((err) => {
                 Logger.error(err.message);
             });
-        // 익스프레스 연동
+        // 익스프레스 로딩
         await expressLoader({ app });
         Logger.info('🔌 express load complete');
     } catch (loaderErr) {
