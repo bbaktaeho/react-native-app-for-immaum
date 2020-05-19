@@ -3,6 +3,7 @@ import {StyleSheet, SafeAreaView, Text, View, Image} from 'react-native';
 import MyButton from '../../components/MyButton';
 import MyHeader from '../../components/MyHeader';
 import MyAlert from '../../components/MyAlert';
+
 const moon = require('../../../assets/images/moon.png');
 
 class Home extends Component {

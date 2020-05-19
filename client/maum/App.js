@@ -9,6 +9,10 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 Icon.loadFont();
 
 class App extends React.Component {
+  constructor(props) {
+    super(props);
+  }
+
   componentDidMount() {
     setTimeout(() => {
       SplashScreen.hide();

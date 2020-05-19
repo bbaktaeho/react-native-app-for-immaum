@@ -1,6 +1,10 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
+import {YellowBox} from 'react-native';
 
+YellowBox.ignoreWarnings([
+  'Unrecognized WebSocket connection option(s) `agent`, `perMessageDeflate`, `pfx`, `key`, `passphrase`, `cert`, `ca`, `ciphers`, `rejectUnauthorized`. Did you mean to put these under `headers`?',
+]);
 // View or Navigation
 import Intro from './intro';
 import Selection from './selection';
