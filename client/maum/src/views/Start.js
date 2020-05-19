@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector} from 'react-redux';
-import {YellowBox} from 'react-native';
+import {YellowBox, StatusBar} from 'react-native';
 
 YellowBox.ignoreWarnings([
   'Unrecognized WebSocket connection option(s) `agent`, `perMessageDeflate`, `pfx`, `key`, `passphrase`, `cert`, `ca`, `ciphers`, `rejectUnauthorized`. Did you mean to put these under `headers`?',
@@ -15,6 +15,7 @@ const Start = props => {
   const isSelection = useSelector(state => state.isSelection);
   return (
     <>
+      <StatusBar translucent={true} />
       {!isSelection && !isSkip && <Intro />}
       {!isSelection && isSkip && <Selection />}
       {isSelection && isSkip && <Navigation />}

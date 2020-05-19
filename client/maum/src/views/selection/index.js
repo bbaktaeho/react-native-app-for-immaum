@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import {View, SafeAreaView, Text, StyleSheet, AsyncStorage} from 'react-native';
 import {CheckBox, Image, Button} from 'react-native-elements';
 
+import MyOverlay from '../../components/MyOverlay';
 import {useDispatch} from 'react-redux';
 import {isSelection} from '../../store/actions';
 
@@ -10,6 +11,12 @@ const Selection = props => {
   const [mother, setMother] = useState(false);
   const [sister, setSister] = useState(false);
   const [me, setMe] = useState(false);
+  const [visible, setVisible] = useState(false);
+
+  const toggleOverlay = () => {
+    setVisible(!visible);
+  };
+
   const dispatch = useDispatch();
 
   const check = value => {
@@ -74,9 +81,10 @@ const Selection = props => {
         <Button
           title="시작하기"
           type="outline"
-          onPress={() => dispatch(isSelection())}
+          onPress={() => setVisible(!visible)}
         />
       </View>
+      <MyOverlay isVisible={visible} onBackdropPress={toggleOverlay} />
     </SafeAreaView>
   );
 };

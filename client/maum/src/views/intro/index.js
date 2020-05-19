@@ -1,15 +1,10 @@
-import React, {Component} from 'react';
-import {
-  StyleSheet,
-  View,
-  Text,
-  Image,
-  TouchableOpacity,
-  Platform,
-} from 'react-native';
+import React from 'react';
+import {View, Text, Image, TouchableOpacity} from 'react-native';
 import Swiper from 'react-native-swiper';
 import {useDispatch} from 'react-redux';
 import {appStart} from '../../store/actions';
+import SkipButton from '../../components/intro/skipButton';
+import StartButton from '../../components/intro/startButton';
 
 var styles = {
   wrapper: {},
@@ -23,21 +18,6 @@ var styles = {
     flex: 1,
     color: '#fff',
     fontSize: 30,
-    fontWeight: 'bold',
-  },
-  iosSkip: {
-    position: 'absolute',
-    right: 20,
-    top: 55,
-  },
-  andSkip: {
-    position: 'absolute',
-    right: 20,
-    top: 20,
-  },
-  skipText: {
-    color: '#000000',
-    fontSize: 20,
     fontWeight: 'bold',
   },
   imageView: {
@@ -54,20 +34,7 @@ export default props => {
     <Swiper style={styles.wrapper} showsButtons autoplay={true} loop={false}>
       <View testID="Hello" style={styles.slide}>
         <View style={styles.imageView}>
-          {Platform.OS === 'ios' && (
-            <TouchableOpacity
-              style={styles.iosSkip}
-              onPress={() => dispatch(appStart())}>
-              <Text style={styles.skipText}>SKIP</Text>
-            </TouchableOpacity>
-          )}
-          {Platform.OS === 'android' && (
-            <TouchableOpacity
-              style={styles.andSkip}
-              onPress={() => dispatch(appStart())}>
-              <Text style={styles.skipText}>SKIP</Text>
-            </TouchableOpacity>
-          )}
+          <SkipButton />
 
           <Image
             style={{width: 300, height: 200}}
@@ -78,20 +45,7 @@ export default props => {
       </View>
       <View testID="Beautiful" style={styles.slide}>
         <View style={styles.imageView}>
-          {Platform.OS === 'ios' && (
-            <TouchableOpacity
-              style={styles.iosSkip}
-              onPress={() => dispatch(appStart())}>
-              <Text style={styles.skipText}>SKIP</Text>
-            </TouchableOpacity>
-          )}
-          {Platform.OS === 'android' && (
-            <TouchableOpacity
-              style={styles.andSkip}
-              onPress={() => dispatch(appStart())}>
-              <Text style={styles.skipText}>SKIP</Text>
-            </TouchableOpacity>
-          )}
+          <SkipButton />
           <Image
             style={{width: 200, height: 200}}
             source={require('../../../assets/images/intro2.png')}
@@ -101,20 +55,7 @@ export default props => {
       </View>
       <View testID="Simple" style={styles.slide}>
         <View style={styles.imageView}>
-          {Platform.OS === 'ios' && (
-            <TouchableOpacity
-              style={styles.iosSkip}
-              onPress={() => dispatch(appStart())}>
-              <Text style={styles.skipText}>SKIP</Text>
-            </TouchableOpacity>
-          )}
-          {Platform.OS === 'android' && (
-            <TouchableOpacity
-              style={styles.andSkip}
-              onPress={() => dispatch(appStart())}>
-              <Text style={styles.skipText}>SKIP</Text>
-            </TouchableOpacity>
-          )}
+          <SkipButton />
           <Image
             style={{width: 200, height: 200}}
             source={require('../../../assets/images/intro3.png')}
@@ -124,20 +65,7 @@ export default props => {
       </View>
       <View testID="Simple" style={styles.slide}>
         <View style={styles.imageView}>
-          {Platform.OS === 'ios' && (
-            <TouchableOpacity
-              style={styles.iosSkip}
-              onPress={() => dispatch(appStart())}>
-              <Text style={styles.skipText}>SKIP</Text>
-            </TouchableOpacity>
-          )}
-          {Platform.OS === 'android' && (
-            <TouchableOpacity
-              style={styles.andSkip}
-              onPress={() => dispatch(appStart())}>
-              <Text style={styles.skipText}>SKIP</Text>
-            </TouchableOpacity>
-          )}
+          <SkipButton />
           <Image
             style={{width: 250, height: 220}}
             source={require('../../../assets/images/intro4.png')}
@@ -147,20 +75,7 @@ export default props => {
       </View>
       <View testID="Simple" style={styles.slide}>
         <View style={styles.imageView}>
-          {Platform.OS === 'ios' && (
-            <TouchableOpacity
-              style={styles.iosSkip}
-              onPress={() => dispatch(appStart())}>
-              <Text style={styles.skipText}>SKIP</Text>
-            </TouchableOpacity>
-          )}
-          {Platform.OS === 'android' && (
-            <TouchableOpacity
-              style={styles.andSkip}
-              onPress={() => dispatch(appStart())}>
-              <Text style={styles.skipText}>SKIP</Text>
-            </TouchableOpacity>
-          )}
+          <SkipButton />
           <Image
             style={{width: 200, height: 200}}
             source={require('../../../assets/images/intro5.png')}
@@ -172,9 +87,7 @@ export default props => {
         <Text style={{color: '#fff', fontSize: 30, fontWeight: 'bold'}}>
           밥주러 갑시다!
         </Text>
-        <TouchableOpacity onPress={() => dispatch(appStart())}>
-          <Text>시작하기</Text>
-        </TouchableOpacity>
+        <StartButton />
       </View>
     </Swiper>
   );

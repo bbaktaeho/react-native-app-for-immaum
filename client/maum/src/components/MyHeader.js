@@ -18,7 +18,7 @@ const MyHeader = ({navigation, title = 'empty'}) => {
   return (
     <Header
       barStyle="dark-content"
-      statusBarProps={{backgroundColor: '#8D8A8A', translucent: true}}
+      statusBarProps={{backgroundColor: '#8D8A8A'}}
       leftComponent={<LeftIcon navigation={navigation} />}
       centerComponent={{
         text: title,
