@@ -23,26 +23,26 @@ const Selection = props => {
         <CheckBox
           center
           title="경학"
-          checked={user == 'father'}
-          onPress={() => setUser('father')}
+          checked={user == '경학'}
+          onPress={() => setUser('경학')}
         />
         <CheckBox
           center
           title="명자"
-          checked={user == 'mother'}
-          onPress={() => setUser('mother')}
+          checked={user == '명자'}
+          onPress={() => setUser('명자')}
         />
         <CheckBox
           center
           title="솔히"
-          checked={user == 'sister'}
-          onPress={() => setUser('sister')}
+          checked={user == '솔히'}
+          onPress={() => setUser('솔히')}
         />
         <CheckBox
           center
           title="태호"
-          checked={user == 'me'}
-          onPress={() => setUser('me')}
+          checked={user == '태호'}
+          onPress={() => setUser('태호')}
         />
       </View>
       <View style={styles.buttonContainer}>

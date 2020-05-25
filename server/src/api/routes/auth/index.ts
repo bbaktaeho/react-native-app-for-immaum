@@ -14,9 +14,10 @@ export default (app: Router) => {
      */
     router.post('/', middlewares.registerValidator, async (req, res) => {
         try {
-            //
+            const user = req.body;
             const authServiceInstance = Container.get(AuthService);
-            res.send('가족 구성원 등록');
+            const { success, message, status } = await authServiceInstance.register({ user });
+            res.status(status).json({ success, message });
         } catch (err) {
             res.status(500).json({ sucess: false, message: err.message });
         }
