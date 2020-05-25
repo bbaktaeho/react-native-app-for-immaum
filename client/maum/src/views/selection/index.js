@@ -2,14 +2,12 @@ import React, {useState} from 'react';
 import {View, SafeAreaView, Text, StyleSheet} from 'react-native';
 import {CheckBox, Image, Button} from 'react-native-elements';
 
-import MyOverlay from '../../components/MyOverlay';
+import MyOverlay from '../../components/SelectionOverlay';
 import {useDispatch} from 'react-redux';
 
 const Selection = props => {
   let [user, setUser] = useState('none');
   let [visible, setVisible] = useState(false);
-
-  console.log(user);
 
   const toggleOverlay = () => {
     setVisible(!visible);
@@ -50,7 +48,7 @@ const Selection = props => {
       <View style={styles.buttonContainer}>
         <Button
           disabled={user == 'none'}
-          title="시작하기"
+          title="코드 입력하기"
           type="outline"
           onPress={() => toggleOverlay()}
         />
