@@ -7,7 +7,7 @@ const loader = async ({ app }: { app: Application }) => {
     try {
         // 디비 연동
         await sequelize
-            .sync({ force: true, alter: true })
+            .sync({ force: false, alter: true })
             .then(() => {
                 Logger.info('🔌 db connected complete');
             })

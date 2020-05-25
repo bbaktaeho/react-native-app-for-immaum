@@ -6,6 +6,7 @@ import { dbType } from './index';
 class User extends Model {
     readonly id!: number;
     name!: string;
+    code!: string;
     phone?: string;
 }
 
@@ -13,6 +14,7 @@ User.init(
     {
         name: { type: DataTypes.STRING(20), allowNull: false },
         phone: { type: DataTypes.STRING, allowNull: true, defaultValue: '010-' },
+        code: {type: DataTypes.STRING, allowNull: false, unique: true}
     },
     {
         sequelize,

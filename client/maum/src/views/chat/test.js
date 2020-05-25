@@ -10,7 +10,7 @@ export default class ChatTest extends React.Component {
   };
 
   componentDidMount() {
-    this.socket = io('http://172.17.94.193:3333');
+    this.socket = io('');
     this.socket.on('chat message', msg => {
       this.setState({
         chatMeesages: [...this.state.chatMeesages, msg],

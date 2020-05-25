@@ -1,10 +1,27 @@
 import React, {useState} from 'react';
-import {Button, Overlay, Text} from 'react-native-elements';
+import {View, StyleSheet} from 'react-native';
+import {Button, Overlay, Text, Input} from 'react-native-elements';
+import MyInput from './MyInput';
 
-export default ({isVisible, onBackdropPress}) => {
+const styles = StyleSheet.create({
+  container: {flex: 1, justifyContent: 'center', alignItems: 'center'},
+  text: {
+    fontWeight: 'bold',
+    fontSize: 20,
+    fontStyle: 'normal',
+    paddingBottom: 20,
+  },
+  button: {width: '90%', position: 'absolute', bottom: 30},
+});
+
+export default ({checkUser, isVisible, onBackdropPress, data, onEvent}) => {
   return (
     <Overlay isVisible={isVisible} onBackdropPress={onBackdropPress}>
-      <Text>Hello from Overlay!</Text>
+      <View style={styles.container}>
+        <Text style={styles.text}>코드를 입력해주세요</Text>
+        <MyInput data={data} onEvent={onEvent} holder="코드 입력" />
+        <Button containerStyle={styles.button} title="입력" />
+      </View>
     </Overlay>
   );
 };
