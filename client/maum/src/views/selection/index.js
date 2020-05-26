@@ -54,7 +54,7 @@ const Selection = props => {
         />
       </View>
       <MyOverlay
-        checkUser={user}
+        name={user}
         isVisible={visible}
         onBackdropPress={toggleOverlay}
       />

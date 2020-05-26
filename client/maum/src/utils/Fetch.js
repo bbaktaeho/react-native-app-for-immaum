@@ -9,11 +9,14 @@ const maumAppFetch = ({url, method, body = {}}) => {
   };
   if (method == 'GET') delete options.body;
   return new Promise(async (resolve, reject) => {
+    console.log(options);
+
     await fetch(url, options)
-      .then(response => {
-        resolve(response);
-      })
+      .then(response => response.json())
+      .then(res => resolve(res))
       .catch(err => {
+        console.log(err);
+
         reject(err.message);
       });
   });
