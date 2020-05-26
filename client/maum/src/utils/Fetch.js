@@ -1,11 +1,11 @@
-const maumAppFetch = ({url, method, body = {}}) => {
+const maumAppFetch = (url, method, body = {}) => {
   const options = {
     headers: {
-      Accept: 'application/json',
       'Content-Type': 'application/json',
+      //'Content-Type': 'application/x-www-form-urlencoded',
     },
     method,
-    body,
+    body: JSON.stringify(body),
   };
   if (method == 'GET') delete options.body;
   return new Promise(async (resolve, reject) => {
@@ -15,8 +15,6 @@ const maumAppFetch = ({url, method, body = {}}) => {
       .then(response => response.json())
       .then(res => resolve(res))
       .catch(err => {
-        console.log(err);
-
         reject(err.message);
       });
   });

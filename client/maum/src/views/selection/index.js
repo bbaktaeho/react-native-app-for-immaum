@@ -1,9 +1,9 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import {View, SafeAreaView, Text, StyleSheet} from 'react-native';
 import {CheckBox, Image, Button} from 'react-native-elements';
 
 import MyOverlay from '../../components/SelectionOverlay';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 
 const Selection = props => {
   let [user, setUser] = useState('none');
@@ -12,7 +12,6 @@ const Selection = props => {
   const toggleOverlay = () => {
     setVisible(!visible);
   };
-  const dispatch = useDispatch();
 
   return (
     <SafeAreaView style={{flex: 1}}>
